@@ -16,7 +16,7 @@ module.exports = expressApp => {
     res.send(`Signed out the user: ${deadUser}`);
   });
 
-  expressApp.get("/api/current-user", (request, response) => {
-    response.send(`The current user is: ${request.user}`);
+  expressApp.get("/api/current-user", (req, res) => {
+    res.send(`The current user is: ${req.user}`);
   });
 };
