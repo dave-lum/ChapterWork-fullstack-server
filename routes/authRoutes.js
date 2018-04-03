@@ -8,6 +8,8 @@ module.exports = expressApp => {
     })
   );
 
+  expressApp.get("/auth/dave", passport.authenticate("dave-strategy", {}));
+
   expressApp.get("/auth/google/callback", passport.authenticate("google"));
 
   expressApp.get("/api/logout", (req, res) => {
